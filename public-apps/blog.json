@@ -1,0 +1,67 @@
+{
+  "name": "Blog Application",
+  "description": "A full-featured blog with AI-powered content summarization",
+  "models": [
+    {
+      "name": "Post",
+      "fields": ["id", "title", "content", "summary", "authorId", "publishedAt", "tags"],
+      "relations": ["author", "comments"]
+    },
+    {
+      "name": "User",
+      "fields": ["id", "name", "email", "avatar", "role"],
+      "relations": ["posts", "comments"]
+    },
+    {
+      "name": "Comment",
+      "fields": ["id", "content", "authorId", "postId", "createdAt"],
+      "relations": ["author", "post"]
+    }
+  ],
+  "apis": [
+    {
+      "name": "getPosts",
+      "method": "GET",
+      "path": "/api/posts",
+      "description": "Get all blog posts"
+    },
+    {
+      "name": "getPost",
+      "method": "GET",
+      "path": "/api/posts/[id]",
+      "description": "Get a specific post"
+    },
+    {
+      "name": "createPost",
+      "method": "POST",
+      "path": "/api/posts",
+      "description": "Create a new post"
+    },
+    {
+      "name": "updatePost",
+      "method": "PUT",
+      "path": "/api/posts/[id]",
+      "description": "Update a post"
+    },
+    {
+      "name": "deletePost",
+      "method": "DELETE",
+      "path": "/api/posts/[id]",
+      "description": "Delete a post"
+    }
+  ],
+  "aiBlocks": [
+    {
+      "name": "summarizer",
+      "type": "summarizer",
+      "description": "AI-powered content summarization for blog posts"
+    }
+  ],
+  "features": [
+    "User Authentication",
+    "Rich Text Editor",
+    "AI Summarization",
+    "Comments System",
+    "Tags & Categories"
+  ]
+} 

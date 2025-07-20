@@ -1,0 +1,67 @@
+{
+  "name": "E-commerce Store",
+  "description": "A complete online store with product catalog and AI recommendations",
+  "models": [
+    {
+      "name": "Product",
+      "fields": ["id", "name", "description", "price", "categoryId", "images", "stock", "sku"],
+      "relations": ["category", "reviews", "orderItems"]
+    },
+    {
+      "name": "Category",
+      "fields": ["id", "name", "description", "parentId"],
+      "relations": ["products", "parent", "children"]
+    },
+    {
+      "name": "Order",
+      "fields": ["id", "userId", "status", "total", "shippingAddress", "createdAt"],
+      "relations": ["user", "items"]
+    },
+    {
+      "name": "User",
+      "fields": ["id", "name", "email", "address", "phone"],
+      "relations": ["orders", "reviews"]
+    }
+  ],
+  "apis": [
+    {
+      "name": "getProducts",
+      "method": "GET",
+      "path": "/api/products",
+      "description": "Get product catalog"
+    },
+    {
+      "name": "getProduct",
+      "method": "GET",
+      "path": "/api/products/[id]",
+      "description": "Get specific product"
+    },
+    {
+      "name": "createOrder",
+      "method": "POST",
+      "path": "/api/orders",
+      "description": "Create new order"
+    },
+    {
+      "name": "getOrders",
+      "method": "GET",
+      "path": "/api/orders",
+      "description": "Get user orders"
+    }
+  ],
+  "aiBlocks": [
+    {
+      "name": "recommender",
+      "type": "classifier",
+      "description": "AI-powered product recommendations based on user behavior"
+    }
+  ],
+  "features": [
+    "Product Catalog",
+    "Shopping Cart",
+    "User Authentication",
+    "Order Management",
+    "AI Recommendations",
+    "Payment Integration"
+  ]
+} 

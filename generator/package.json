@@ -1,0 +1,19 @@
+{
+  "name": "vera-generator",
+  "version": "1.0.0",
+  "description": "VERA Generator Module - Prompt to Blueprint to Code Generation",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.8.2",
+    "tsx": "^4.19.2"
+  }
+} 

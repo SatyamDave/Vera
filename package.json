@@ -1,0 +1,57 @@
+{
+  "name": "vera",
+  "version": "1.0.0",
+  "description": "Versatile Engine for Rapid Applications - AI-powered full-stack application generator",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../generator && npm install && cd ../deployment && npm install",
+    "setup": "npm run install:all && npm run db:setup",
+    "db:setup": "cd backend && npx prisma db push && npm run db:seed",
+    "deploy": "cd deployment && npm run deploy",
+    "export": "cd deployment && npm run export",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm run test",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "format": "npm run format:frontend && npm run format:backend",
+    "format:frontend": "cd frontend && npm run format",
+    "format:backend": "cd backend && npm run format"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "frontend",
+    "backend", 
+    "generator",
+    "deployment"
+  ],
+  "keywords": [
+    "ai",
+    "code-generation",
+    "full-stack",
+    "nextjs",
+    "trpc",
+    "prisma",
+    "typescript",
+    "react"
+  ],
+  "author": "VERA Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/vera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/vera/issues"
+  },
+  "homepage": "https://github.com/your-org/vera#readme"
+} 

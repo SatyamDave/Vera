@@ -1,0 +1,62 @@
+{
+  "name": "Task Management App",
+  "description": "A Kanban-style task management application with AI task prioritization",
+  "models": [
+    {
+      "name": "Task",
+      "fields": ["id", "title", "description", "status", "priority", "assigneeId", "dueDate", "projectId"],
+      "relations": ["assignee", "project", "comments"]
+    },
+    {
+      "name": "Project",
+      "fields": ["id", "name", "description", "ownerId", "createdAt"],
+      "relations": ["owner", "tasks", "members"]
+    },
+    {
+      "name": "User",
+      "fields": ["id", "name", "email", "avatar"],
+      "relations": ["assignedTasks", "ownedProjects", "projectMemberships"]
+    }
+  ],
+  "apis": [
+    {
+      "name": "getTasks",
+      "method": "GET",
+      "path": "/api/tasks",
+      "description": "Get all tasks"
+    },
+    {
+      "name": "createTask",
+      "method": "POST",
+      "path": "/api/tasks",
+      "description": "Create new task"
+    },
+    {
+      "name": "updateTask",
+      "method": "PUT",
+      "path": "/api/tasks/[id]",
+      "description": "Update task"
+    },
+    {
+      "name": "getProjects",
+      "method": "GET",
+      "path": "/api/projects",
+      "description": "Get user projects"
+    }
+  ],
+  "aiBlocks": [
+    {
+      "name": "prioritizer",
+      "type": "classifier",
+      "description": "AI-powered task prioritization based on deadlines and importance"
+    }
+  ],
+  "features": [
+    "Kanban Board",
+    "Task Assignment",
+    "Project Management",
+    "AI Prioritization",
+    "Team Collaboration",
+    "Due Date Tracking"
+  ]
+} 

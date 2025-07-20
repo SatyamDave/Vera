@@ -1,0 +1,61 @@
+{
+  "name": "Chatbot Application",
+  "description": "An AI-powered chatbot with conversation history",
+  "models": [
+    {
+      "name": "Message",
+      "fields": ["id", "content", "role", "conversationId", "timestamp", "metadata"],
+      "relations": ["conversation"]
+    },
+    {
+      "name": "Conversation",
+      "fields": ["id", "title", "userId", "createdAt", "updatedAt"],
+      "relations": ["messages", "user"]
+    },
+    {
+      "name": "User",
+      "fields": ["id", "name", "email", "preferences"],
+      "relations": ["conversations"]
+    }
+  ],
+  "apis": [
+    {
+      "name": "getConversations",
+      "method": "GET",
+      "path": "/api/conversations",
+      "description": "Get user conversations"
+    },
+    {
+      "name": "getMessages",
+      "method": "GET",
+      "path": "/api/conversations/[id]/messages",
+      "description": "Get conversation messages"
+    },
+    {
+      "name": "sendMessage",
+      "method": "POST",
+      "path": "/api/conversations/[id]/messages",
+      "description": "Send a message"
+    },
+    {
+      "name": "createConversation",
+      "method": "POST",
+      "path": "/api/conversations",
+      "description": "Create new conversation"
+    }
+  ],
+  "aiBlocks": [
+    {
+      "name": "chat",
+      "type": "chat",
+      "description": "AI chatbot with conversation memory and context"
+    }
+  ],
+  "features": [
+    "Real-time Chat",
+    "Conversation History",
+    "AI Context Memory",
+    "User Authentication",
+    "Message Threading"
+  ]
+} 

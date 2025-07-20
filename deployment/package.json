@@ -1,0 +1,21 @@
+{
+  "name": "vera-deployment",
+  "version": "1.0.0",
+  "description": "VERA Deployment Module - Deploy and export applications",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "tsx src/vercelDeploy.ts",
+    "export": "tsx src/zipExport.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/archiver": "^6.0.2",
+    "typescript": "^5.8.2",
+    "tsx": "^4.19.2"
+  }
+} 
