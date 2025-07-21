@@ -1,47 +1,67 @@
-# VERA (Versatile Engine for Rapid Applications)
+# VERA AI - AI-Powered Full-Stack Application Generator
 
-A developer tool that turns natural language prompts into full-stack web applications with AI features, live code editing, and deployment support.
+VERA AI is a revolutionary development platform that transforms natural language descriptions into complete, production-ready full-stack web applications. Built with modern technologies and AI-powered code generation, VERA enables developers and non-developers alike to build sophisticated applications in minutes, not months.
 
 ## 🚀 Features
 
-- **Natural Language to Code**: Transform prompts into complete applications
-- **Live Code Editor**: Monaco + Sandpack-based development environment
-- **AI-Powered Generation**: OpenAI, Anthropic, and Together AI integration
-- **Full-Stack Templates**: Next.js, tRPC, Prisma, NextAuth stack
-- **One-Click Deployment**: Deploy to Vercel, Netlify, or export locally
-- **Modular Architecture**: Clean separation of concerns
+### AI-Powered Code Generation
+- **Natural Language Processing**: Describe your app idea in plain English
+- **Intelligent Tech Stack Selection**: Automatically chooses the best technologies for your use case
+- **Complete Application Generation**: Frontend, backend, database, and deployment configuration
+- **Real-time Code Editing**: Live preview and code modification in a sophisticated IDE
 
-## 📁 Project Structure
+### Full-Stack Applications
+- **Modern Frameworks**: Next.js, React, Vue.js, Svelte, Angular
+- **Database Integration**: Prisma, PostgreSQL, MongoDB, Supabase, Firebase
+- **Authentication**: NextAuth.js, Clerk, Auth0, Supabase Auth
+- **Payment Processing**: Stripe, PayPal, Square integration
+- **AI Features**: Chatbots, content summarization, recommendations
 
-```
-vera/
-├── frontend/           # UI with Monaco/Sandpack from llamacoder
-├── backend/           # tRPC, Auth, Prisma from create-t3-app
-├── generator/         # Prompt-to-fileplan logic (WIP)
-├── public-apps/       # Example blueprints (blog, chatbot, etc.)
-└── deployment/        # Vercel deploy or ZIP exporter
-```
+### Professional Development Experience
+- **Studio Environment**: Integrated IDE with Monaco Editor
+- **Live Preview**: Real-time application preview
+- **AI Assistant**: Chat-based code modification and guidance
+- **Deployment Ready**: One-click deployment to Vercel, Netlify, Railway, Heroku
+
+## 🎯 What You Can Build
+
+VERA AI can generate any type of web application:
+
+- **E-commerce Stores**: Complete online stores with payments and inventory
+- **Blog Platforms**: Content management with AI-powered features
+- **Task Managers**: Kanban boards with team collaboration
+- **AI Chatbots**: Intelligent conversational interfaces
+- **Social Media Apps**: User networks with real-time features
+- **Admin Dashboards**: Analytics and user management systems
+- **SaaS Applications**: Subscription-based business applications
+- **Portfolio Websites**: Professional personal branding sites
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 15** - React framework with App Router
-- **Monaco Editor** - VS Code-like code editor
-- **Sandpack** - Live code preview and sandbox
-- **Tailwind CSS** - Utility-first CSS framework
-- **Vercel AI SDK** - AI integration hooks
+- **Next.js 14**: React framework with App Router
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first styling
+- **Framer Motion**: Smooth animations
+- **Monaco Editor**: Professional code editing
 
 ### Backend
-- **tRPC** - End-to-end typesafe APIs
-- **Prisma** - Database ORM with SQLite
-- **NextAuth.js** - Authentication system
-- **Zod** - Schema validation
-- **Plop** - Code scaffolding
+- **tRPC**: End-to-end type-safe APIs
+- **Prisma**: Database ORM and migrations
+- **NextAuth.js**: Authentication system
+- **OpenAI Integration**: AI-powered features
 
-### AI Integration
-- **OpenAI GPT-4** - Primary code generation
-- **Anthropic Claude** - Alternative AI provider
-- **Together AI** - Open source model support
+### Database
+- **PostgreSQL**: Primary database
+- **SQLite**: Development database
+- **MongoDB**: Document database option
+- **Supabase**: Backend-as-a-Service option
+
+### Deployment
+- **Vercel**: Primary deployment platform
+- **Netlify**: Alternative deployment
+- **Railway**: Full-stack hosting
+- **Heroku**: Traditional hosting
 
 ## 🚀 Quick Start
 
@@ -54,162 +74,245 @@ vera/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd VERA
+   git clone https://github.com/your-username/vera-ai.git
+   cd vera-ai
    ```
 
-2. **Install all dependencies**
+2. **Install dependencies**
    ```bash
-   npm run install:all
+   npm install
    ```
 
 3. **Set up environment variables**
    ```bash
-   # Copy frontend environment file
-   cp frontend/.example.env frontend/.env
-   # Edit frontend/.env with your API keys
+   cp .env.example .env.local
+   ```
    
-   # Backend environment is auto-created
+   Configure your environment variables:
+   ```env
+   # Database
+   DATABASE_URL="postgresql://user:password@localhost:5432/vera"
+   
+   # Authentication
+   NEXTAUTH_SECRET="your-secret-key"
+   NEXTAUTH_URL="http://localhost:3000"
+   
+   # AI Services
+   OPENAI_API_KEY="your-openai-key"
+   
+   # Deployment
+   VERCEL_TOKEN="your-vercel-token"
    ```
 
-4. **Initialize database**
+4. **Set up the database**
    ```bash
-   npm run db:setup
+   npx prisma generate
+   npx prisma db push
    ```
 
-5. **Start development servers**
+5. **Start the development server**
    ```bash
    npm run dev
    ```
 
 6. **Open your browser**
-   - Frontend: http://localhost:3000
-   - Backend: http://localhost:3001
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📖 Usage
+## 📖 How to Use
 
-### 1. Create a New Application
-
-1. Open the VERA frontend
-2. Enter your prompt describing the application you want to build
-3. VERA will analyze your requirements and generate a blueprint
-4. Review and customize the generated code
-5. Deploy or export your application
-
-### 2. Example Prompts
+### 1. Describe Your App
+Visit the VERA AI homepage and describe your application idea in natural language:
 
 ```
-"Create a blog application with user authentication, 
-post creation, and commenting system"
-
-"Build an e-commerce store with product catalog, 
-shopping cart, and Stripe payment integration"
-
-"Make a task management app with Kanban boards, 
-drag-and-drop, and team collaboration"
+"Build me an e-commerce store with Stripe payments, user authentication, 
+and an admin dashboard for managing products and orders"
 ```
 
-### 3. Using Plop for Backend Scaffolding
+### 2. AI Generation
+VERA AI will:
+- Analyze your requirements
+- Select the optimal tech stack
+- Generate all necessary files
+- Set up database schemas
+- Configure authentication
+- Create API endpoints
 
-```bash
-cd backend
-npm run plop api    # Generate new API route
-npm run plop model  # Generate new Prisma model
+### 3. Studio Environment
+The generated app opens in VERA Studio where you can:
+- View and edit generated code
+- See live previews
+- Chat with AI assistant for modifications
+- Test functionality
+- Deploy to production
+
+### 4. Deploy
+With one click, deploy your application to:
+- Vercel (recommended)
+- Netlify
+- Railway
+- Heroku
+
+## 🏗️ Project Structure
+
+```
+vera-ai/
+├── frontend/                 # Next.js frontend application
+│   ├── app/                 # App Router pages
+│   │   ├── studio/         # AI Studio environment
+│   │   └── api/            # API routes
+│   ├── components/         # React components
+│   ├── lib/               # Utility libraries
+│   └── prisma/            # Database schema
+├── backend/                # Backend API server
+│   ├── src/
+│   │   ├── app/           # API routes
+│   │   ├── server/        # tRPC server
+│   │   └── auth/          # Authentication
+│   └── prisma/            # Database models
+├── generator/              # AI code generation engine
+│   └── src/
+│       ├── promptToBlueprint.ts
+│       └── generateFiles.ts
+└── deployment/             # Deployment utilities
 ```
 
-## 🔧 Development
+## 🤖 AI Generation Engine
 
-### Frontend Development
-```bash
-cd frontend
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run lint         # Run ESLint
+The AI generation engine consists of several key components:
+
+### Prompt Analysis
+- Natural language processing to understand requirements
+- Feature extraction and categorization
+- Tech stack recommendation
+
+### Blueprint Generation
+- Application architecture design
+- Database schema planning
+- API endpoint specification
+- Component structure
+
+### Code Generation
+- File-by-file code generation
+- Dependency management
+- Configuration files
+- Documentation
+
+## 🎨 Design System
+
+VERA AI uses a sophisticated design system inspired by Framer's Soft UI:
+
+### Color Palette
+- **Primary**: `rgb(179,194,203)` - Soft blue-gray
+- **Background**: `slate-950` - Deep dark background
+- **Accents**: White gradients for highlights
+
+### Typography
+- **Font**: Inter (Google Fonts)
+- **Weights**: Light (300), Regular (400), Medium (500)
+- **Sizes**: Responsive scale from 12px to 72px
+
+### Components
+- **Cards**: Subtle borders with backdrop blur
+- **Buttons**: Gradient backgrounds with hover effects
+- **Inputs**: Clean borders with focus states
+- **Animations**: Smooth transitions with Framer Motion
+
+## 🔧 Configuration
+
+### Environment Variables
+
+```env
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/vera"
+
+# Authentication
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+
+# AI Services
+OPENAI_API_KEY="your-openai-key"
+TOGETHER_API_KEY="your-together-key"
+
+# Deployment
+VERCEL_TOKEN="your-vercel-token"
+NETLIFY_TOKEN="your-netlify-token"
+
+# Storage
+CLOUDINARY_URL="your-cloudinary-url"
+AWS_ACCESS_KEY="your-aws-key"
+AWS_SECRET_KEY="your-aws-secret"
 ```
 
-### Backend Development
-```bash
-cd backend
-npm run dev          # Start development server
-npm run db:studio    # Open Prisma Studio
-npm run db:push      # Push schema changes
-npm run plop         # Run code generators
-```
+### Customization
 
-### Database Management
-```bash
-cd backend
-npm run db:generate  # Generate Prisma client
-npm run db:migrate   # Run migrations
-npm run db:studio    # Open database GUI
-```
+You can customize VERA AI by modifying:
 
-## 🎯 Example Applications
-
-### Blog Application
-- User authentication with NextAuth
-- Create, edit, and delete blog posts
-- Comment system with real-time updates
-- Rich text editor with markdown support
-- Tags and categories
-
-### E-commerce Store
-- Product catalog with search and filtering
-- Shopping cart with persistent storage
-- User accounts and order history
-- Stripe payment integration
-- Admin dashboard
-
-### Task Management App
-- Kanban-style task organization
-- Drag-and-drop interface
-- Team collaboration features
-- Due dates and priority levels
-- Progress tracking
+- **AI Prompts**: Edit generation prompts in `generator/src/`
+- **Tech Stacks**: Add new frameworks in `lib/ai-generator.ts`
+- **Templates**: Create custom app templates
+- **Styling**: Modify the design system in `styles/`
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
-1. Connect your GitHub repository
-2. Configure environment variables
-3. Deploy automatically on push
 
-### Local Export
-1. Click "Export Project" in VERA
-2. Download the ZIP file
-3. Extract and run locally
-4. Follow the setup instructions
+1. Connect your GitHub repository to Vercel
+2. Configure environment variables
+3. Deploy with one click
 
 ### Other Platforms
-- **Netlify**: Static site hosting with serverless functions
-- **Railway**: Full-stack deployment with database hosting
-- **Docker**: Containerized deployment
+
+- **Netlify**: Drag and drop deployment
+- **Railway**: Full-stack hosting with databases
+- **Heroku**: Traditional hosting with add-ons
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
-## 📝 License
+### Development Setup
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+### Code Style
+
+- TypeScript for type safety
+- ESLint for code quality
+- Prettier for formatting
+- Conventional commits
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- [llamacoder](https://github.com/Nutlope/llamacoder) - Frontend inspiration
-- [create-t3-app](https://github.com/t3-oss/create-t3-app) - Backend stack
-- [plop](https://github.com/plopjs/plop) - Code scaffolding
-- [Vercel AI SDK](https://github.com/vercel/ai) - AI integration
+- **Next.js Team**: For the amazing React framework
+- **Vercel**: For deployment infrastructure
+- **OpenAI**: For AI capabilities
+- **Prisma**: For database tooling
+- **Framer**: For design inspiration
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/your-username/vera/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/vera/discussions)
-- **Documentation**: [Wiki](https://github.com/your-username/vera/wiki)
+- **Documentation**: [docs.vera-ai.com](https://docs.vera-ai.com)
+- **Discord**: [Join our community](https://discord.gg/vera-ai)
+- **Email**: support@vera-ai.com
+- **Twitter**: [@vera_ai](https://twitter.com/vera_ai)
+
+## 🗺️ Roadmap
+
+- [ ] Multi-language support
+- [ ] Mobile app generation
+- [ ] Advanced AI features
+- [ ] Team collaboration
+- [ ] Enterprise features
+- [ ] Plugin ecosystem
 
 ---
 
-**VERA** - Building the future of rapid application development, one prompt at a time. 🚀 
+Built with ❤️ by the VERA AI Team 

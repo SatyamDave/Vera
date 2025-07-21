@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(del .env)",
+      "Bash(rm:*)",
+      "Bash(curl:*)",
+      "Bash(taskkill:*)",
+      "Bash(npx next:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)"
+    ],
+    "deny": []
+  }
+}

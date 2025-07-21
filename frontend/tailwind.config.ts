@@ -22,13 +22,25 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        brand: "#E1E7EC",
-        blue: {
-          "300": "#94b2fa",
-          "500": "#326DF5",
-          "700": "#1F326F",
+        brand: "#1A1A1A",
+        vera: {
+          "50": "#F8FAFC",
+          "100": "#F1F5F9", 
+          "200": "#E2E8F0",
+          "300": "#CBD5E1",
+          "400": "#94A3B8",
+          "500": "#64748B",
+          "600": "#475569",
+          "700": "#334155",
+          "800": "#1E293B",
+          "900": "#0F172A",
         },
-        gray: colors.zinc,
+        blue: {
+          "300": "#60A5FA",
+          "500": "#3B82F6",
+          "700": "#1D4ED8",
+        },
+        gray: colors.slate,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

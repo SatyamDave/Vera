@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rimraf node_modules package-lock.json"
   },
   "dependencies": {
     "zod": "^3.24.2"

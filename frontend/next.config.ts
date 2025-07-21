@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   serverExternalPackages: ["@codesandbox/sdk"],
+  // Ensure proper output configuration
+  output: "standalone",
   webpack: (config, options) => {
     if (options.nextRuntime === "edge") {
       if (!config.resolve.conditionNames) {

@@ -5,13 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:frontend": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && set NEXT_TELEMETRY_DISABLED=1 && npm run dev -- -p 3000",
+    "dev:backend": "cd backend && npm run dev -- -p 3001",
     "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd backend && npm run build",
-    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../generator && npm install && cd ../deployment && npm install",
-    "setup": "npm run install:all && npm run db:setup",
+    "install:all": "npm install",
+    "setup": "npm install && npm run db:setup",
     "db:setup": "cd backend && npx prisma db push && npm run db:seed",
     "deploy": "cd deployment && npm run deploy",
     "export": "cd deployment && npm run export",
@@ -23,10 +23,14 @@
     "lint:backend": "cd backend && npm run lint",
     "format": "npm run format:frontend && npm run format:backend",
     "format:frontend": "cd frontend && npm run format",
-    "format:backend": "cd backend && npm run format"
+    "format:backend": "cd backend && npm run format",
+    "clean": "rimraf node_modules package-lock.json",
+    "clean:frontend": "cd frontend && rimraf node_modules .next package-lock.json",
+    "clean:backend": "cd backend && rimraf node_modules .next package-lock.json"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.5"
   },
   "workspaces": [
     "frontend",

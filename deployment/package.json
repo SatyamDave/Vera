@@ -7,7 +7,8 @@
     "build": "tsc",
     "deploy": "tsx src/vercelDeploy.ts",
     "export": "tsx src/zipExport.ts",
-    "test": "jest"
+    "test": "jest",
+    "clean": "rimraf node_modules package-lock.json"
   },
   "dependencies": {
     "archiver": "^6.0.1"
